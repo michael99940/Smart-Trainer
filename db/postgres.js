@@ -32,7 +32,7 @@ const getUser = (username) => {
 const getSalt = (username) => {
 	return new Promise((resolve, reject) => {
 		client.query(`SELECT salt FROM athletes WHERE username='${username}'`, (err, res) => {
-			if (err) {
+	  	if (err) {
 				reject(err);
 			} else {
 				resolve(res);
@@ -194,8 +194,8 @@ const getExerciseByTarget = target => getExercise('mainTarget', target);
 
 module.exports = {
 	getMetrics,
-	insertMetrics,
-	deleteMetrics,
+	insertMetric,
+	deleteMetric,
 	newUser,
 	getExerciseByName,
 	getExerciseByTarget,
