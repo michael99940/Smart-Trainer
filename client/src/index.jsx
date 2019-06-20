@@ -4,6 +4,7 @@ import axios from 'axios';
 import LoginForm from './components/login.jsx';
 import Metrics from './components/metrics.jsx';
 import SignUp from './components/signup.jsx';
+import Exercise from './components/exercise.jsx';
 
 
 class App extends React.Component {
@@ -20,8 +21,9 @@ class App extends React.Component {
       goal:'',
       BF: 0,
       DoB: '',
-      ExerciseData: [],
-      test: 'test string'
+      exerciseData: [{name: 'test', frequency: '10 sets of 12', description: 'just lift it', demo: `https://www.youtube.com/embed/oGJr5N2lgsQ`}],
+      test: 'test string',
+      APIkey: YOUTUBE_API_KEY
     };
     this.login = this.login.bind(this);
     this.change = this.change.bind(this);
@@ -85,6 +87,8 @@ class App extends React.Component {
       .catch(error => console.log(error));
   }
 
+
+
   componentDidMount() {
     //get cookies
   }
@@ -110,6 +114,13 @@ class App extends React.Component {
           height={this.state.height}
           DoB={this.state.DoB}
           submitMetrics={this.submitMetrics}/>
+        {this.state.exerciseData.map(exercise => 
+          <Exercise demo={exercise.demo}
+            name={exercise.name}
+            frequency={exercise.frequency}
+            description={exercise.description}
+          />
+        )}
       </div>
     );
   }

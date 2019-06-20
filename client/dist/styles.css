@@ -1,0 +1,6 @@
+.exercise {
+  text-align: center;
+  cursor: pointer;
+  display: grid;
+  grid-template-columns: 100px 100px 200px;
+}
