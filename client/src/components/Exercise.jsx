@@ -23,14 +23,14 @@ class Exercise extends React.Component {
 
   render() {
     return(
-      <div>
-        <div className='exercise' onClick={() => this.showVid()}>
-          <div>{this.state.name}</div>
-          <div>{this.state.frequency}</div>
-          <div>{this.state.description}</div>
+      <div className="container container-exercise">
+        <div className="row" onClick={() => this.showVid()}>
+          <div className="col-sm">{this.state.name}</div>
+          <div className="col-sm">{this.state.frequency}</div>
+          <div className="col-sm">{this.state.description}</div>
         </div>
-        <div className='video'>
-          <iframe style={this.state.showVid ? {display: 'block'} : {display: 'none'}} width="560" height="315" src={this.state.demo} frameBorder="0" allowFullScreen></iframe>
+        <div className="row">
+          <iframe className="col-sm" style={this.state.showVid ? {display: 'block'} : {display: 'none'}} width="560" height="315" src={this.state.demo} frameBorder="0" allowFullScreen></iframe>
         </div>
       </div>
     );

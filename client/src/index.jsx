@@ -22,13 +22,14 @@ class App extends React.Component {
       BF: 0,
       DoB: '',
       exerciseData: [{name: 'test', frequency: '10 sets of 12', description: 'just lift it', demo: `https://www.youtube.com/embed/oGJr5N2lgsQ`}],
-      test: 'test string',
-      APIkey: YOUTUBE_API_KEY
+      displayLogin: true,
+      test: 'test string'
     };
     this.login = this.login.bind(this);
     this.change = this.change.bind(this);
     this.validatePassword = this.validatePassword.bind(this);
     this.submitMetrics = this.submitMetrics.bind(this);
+    this.toggleLogin = this.toggleLogin.bind(this);
   }
 
   login(username, password) {
@@ -46,6 +47,12 @@ class App extends React.Component {
       .catch(error => console.log(error));
     //confirm user & password pair exists
     //then either reject or login
+  }
+
+  toggleLogin() {
+    this.setState({
+      displayLogin: !this.state.displayLogin
+    });
   }
 
   change(e) {
@@ -98,13 +105,17 @@ class App extends React.Component {
       <div>
         <LoginForm username={this.state.username} 
           password={this.state.password} 
+          displayLogin={this.state.displayLogin}
           login={this.login}
-          change={this.change} />
+          change={this.change} 
+          toggleLogin={this.toggleLogin}/>
         <SignUp username={this.state.username} 
           password={this.state.password} 
           cPassword={this.state.cPassword}
+          displayLogin={this.state.displayLogin}
           change={this.change}
-          validatePassword={this.validatePassword}/> 
+          validatePassword={this.validatePassword}
+          toggleLogin={this.toggleLogin}/> 
         <Metrics goal={this.state.goal} 
           change={this.change} 
           experience={this.state.experience}
