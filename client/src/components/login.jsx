@@ -16,8 +16,8 @@ const LoginForm = (props) => (
         </div>
       </form>
       <div className='row'>
-        <div className='col-2 login' onClick={() => props.login(props.username, props.password)}>Login</div>
-        <div className='col-2 signUp' onClick={() => props.toggleLogin()}>Sign Up</div>
+        <div className='col-2 active' onClick={() => props.login(props.username, props.password)}>Login</div>
+        <div className='col-2 cursor' onClick={() => props.toggleLogin()}>Sign Up</div>
       </div>
     </div>
   </div>

@@ -1,15 +1,19 @@
-.login:hover {
-  background-color: blue;
-  color: white;
-  cursor: pointer;
-}
-
-.signUp:hover {
-  background-color: blue;
-  color: white;
-  cursor: pointer;
-}
-
 .container-exercise {
   cursor: pointer;
+}
+
+.active {
+  background-color: black;
+  color: white;
+  cursor: pointer;
+}
+
+.active:hover {
+  opacity: 0.5;
+}
+
+.cursor:hover {
+  cursor:pointer;
+  background-color: gray;
+  color: white;
 }

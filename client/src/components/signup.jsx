@@ -16,12 +16,12 @@ const SignUp = (props) => (
         </div>
         <div className='row'>
           <label htmlFor='cPassword' className='col-2'>Confirm Password:</label>
-          <input Classname='col-2' type="password" id='cPassword' name="cPassword" onChange={e => props.change(e)} placeholder='confirm password' minLength='8' required></input>
+          <input className='col-2' type="password" id='cPassword' name="cPassword" onChange={e => props.change(e)} placeholder='confirm password' minLength='8' required></input>
         </div>
       </form>
       <div className='row'>
-        <div className='col-2 login' onClick={() => props.toggleLogin()}>Login</div>
-        <div className='col-2 signUp' onClick={() => props.validatePassword(props.username, props.password, props.cPassword)}>Sign Up</div>
+        <div className='col-2 cursor' onClick={() => props.toggleLogin()}>Login</div>
+        <div className='col-2 active' onClick={() => props.validatePassword(props.username, props.password, props.cPassword)}>Sign Up</div>
       </div>
     </div>
   </div>

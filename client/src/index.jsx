@@ -5,6 +5,7 @@ import LoginForm from './components/login.jsx';
 import Metrics from './components/metrics.jsx';
 import SignUp from './components/signup.jsx';
 import Exercise from './components/exercise.jsx';
+import ChartDisplay from './components/chartDisplay.jsx';
 
 
 class App extends React.Component {
@@ -21,6 +22,8 @@ class App extends React.Component {
       goal:'',
       BF: 0,
       DoB: '',
+      BFArr:[10.2, 10.3, 10.4, 10.3, 10.2, 10.1, 10.0, 9.9, 10.0, 9.8, 9.7],
+      weightArr:[72.0, 72.1, 72.2, 72.3, 74.0, 72.0, 73.9, 72.0, 71.5, 71.4,71.3],
       exerciseData: [{name: 'test', frequency: '10 sets of 12', description: 'just lift it', demo: `https://www.youtube.com/embed/oGJr5N2lgsQ`}],
       displayLogin: true,
       test: 'test string'
@@ -108,14 +111,16 @@ class App extends React.Component {
           displayLogin={this.state.displayLogin}
           login={this.login}
           change={this.change} 
-          toggleLogin={this.toggleLogin}/>
+          toggleLogin={this.toggleLogin}
+        />
         <SignUp username={this.state.username} 
           password={this.state.password} 
           cPassword={this.state.cPassword}
           displayLogin={this.state.displayLogin}
           change={this.change}
           validatePassword={this.validatePassword}
-          toggleLogin={this.toggleLogin}/> 
+          toggleLogin={this.toggleLogin}
+        /> 
         <Metrics goal={this.state.goal} 
           change={this.change} 
           experience={this.state.experience}
@@ -124,7 +129,11 @@ class App extends React.Component {
           BF={this.state.BF}
           height={this.state.height}
           DoB={this.state.DoB}
-          submitMetrics={this.submitMetrics}/>
+          submitMetrics={this.submitMetrics}
+        />
+        <ChartDisplay BFArr={this.state.BFArr}
+          weightArr={this.state.weightArr}
+        />
         {this.state.exerciseData.map(exercise => 
           <Exercise demo={exercise.demo}
             name={exercise.name}

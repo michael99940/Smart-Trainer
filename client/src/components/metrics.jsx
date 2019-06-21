@@ -33,10 +33,6 @@ const Metrics = (props) => {
             <option value='Female'>Female</option>
           </select>
         </div>
-        <div className='row'>
-          <label htmlFor='DoB' className='col-2'>Date of Birth:</label>
-          <input className='col-2' type='date' id='DoB' name='DoB' value={props.DoB} onChange={e => props.change(e)} required></input>
-        </div>
       </form>
       <button className='row' onClick={props.submitMetrics}>Submit Metrics</button>
     </div>
